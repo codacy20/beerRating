@@ -1,2 +1,19 @@
- <h2 class="page-header">Dashboard</h2>
-<p>Welcome to your dashboard</p>  
+<div class="jumbotron">
+  <h1 class="display-3"></h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+  <form class="form-inline" method="post" action="users/addBeer">
+    <label class="sr-only" for="inlineFormInput">Beers</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="beer name" name="name">
+
+    <label class="sr-only" for="inlineFormInputGroup">Rate</label>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="rate" name="rate">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>

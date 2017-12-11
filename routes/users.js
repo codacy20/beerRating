@@ -4,6 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+var Beer = require('../models/beer');
 
 // Register
 router.get('/register', function(req, res){
@@ -54,6 +55,32 @@ router.post('/register', function(req, res){
 
 		res.redirect('/users/login');
 	}
+});
+
+router.post('/addBeer',
+ function(req, res){
+	var name = req.body.name;
+	var rate = req.body.rate;
+		var newBeer = new Beer({
+			name: name,
+			rate: rate
+		});
+		// console.log(newBeer.name);
+		// console.log(req.user);
+		// passport.authenticate('local', { session: false },
+  	// 		function(req, res) {
+		var u = req.user;
+		console.log(u);
+					User.addBeer(newBeer,u , function(err, newBeer){
+						if(err) throw err;
+					});
+	// );
+    // 		res.json({ id: req.user.id, username: req.user.username })});
+
+		req.flash('success_msg', 'You are registered and can now login');
+
+		res.redirect('/');
+
 });
 
 passport.use(new LocalStrategy(

@@ -15,6 +15,9 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
+	},
+	beers:{
+		type:[]
 	}
 });
 
@@ -43,4 +46,15 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     	if(err) throw err;
     	callback(null, isMatch);
 	});
+}
+
+module.exports.getBeers = function(id,callback){
+	var User = getUserById(id,callback);
+	return User.beers;
+}
+
+module.exports.addBeer = function(beer,user,callback){
+	user.beers.push(beer);
+	// console.log(user.beers);
+	user.save();
 }
