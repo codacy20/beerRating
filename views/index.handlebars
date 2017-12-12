@@ -8,25 +8,86 @@
     <label class="sr-only" for="inlineFormInput">Beers</label>
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="beer name" name="name">
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">1</a>
-        <a class="dropdown-item" href="#">2</a>
-        <a class="dropdown-item" href="#">3</a>
-        <a class="dropdown-item" href="#">4</a>
-        <a class="dropdown-item" href="#">5</a>
-        <a class="dropdown-item" href="#">6</a>
-        <a class="dropdown-item" href="#">7</a>
-        <a class="dropdown-item" href="#">8</a>
-        <a class="dropdown-item" href="#">9</a>
-        <a class="dropdown-item" href="#">10</a>
-      </div>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary active">
+<input type="radio" name="rate" id="option1" autocomplete="off" value="1" checked> 1
+</label>
+      <label class="btn btn-primary">
+<input type="radio" name="rate" id="option2" autocomplete="off" value="2"> 2
+</label>
+      <label class="btn btn-primary">
+<input type="radio" name="rate" id="option3" autocomplete="off" value="3"> 3
+</label>
+      <label class="btn btn-primary">
+<input type="radio" name="rate" id="option4" autocomplete="off" value="4"> 4
+</label>
+      <label class="btn btn-primary">
+<input type="radio" name="rate" id="option5" autocomplete="off" value="5"> 5
+</label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Add</button>
   </form>
 
+</div>
+
+
+<div class="col-lg-6">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Top Beers</div>
+    <div class="panel-body">
+      <p>ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Rate</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="col-lg-6">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Your Top Beers</div>
+    <div class="panel-body">
+      <p>ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Rate</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+      </tr>
+    </table>
+  </div>
 </div>

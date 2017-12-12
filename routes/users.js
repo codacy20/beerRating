@@ -59,6 +59,7 @@ router.post('/register', function(req, res){
 
 router.post('/addBeer',
  function(req, res){
+	 console.log('this is out'+JSON.stringify(req.body.rate));
 	var name = req.body.name;
 	var rate = req.body.rate;
 		var newBeer = new Beer({
@@ -77,7 +78,7 @@ router.post('/addBeer',
 	// );
     // 		res.json({ id: req.user.id, username: req.user.username })});
 
-		req.flash('success_msg', 'You are registered and can now login');
+		req.flash('success_msg', 'You\'ve just rated a beer! Cheers');
 
 		res.redirect('/');
 
