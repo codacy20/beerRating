@@ -1,12 +1,12 @@
 # Node.js Loginapp
 
-This is a user login and registration app using Node.js, Express, Passport and Mongoose. It is part of the YouTube series [here](https://www.youtube.com/watch?v=Z1ktxiqyiLA)
+This is a Beer Rating App with features like: user login, registration and rating. It was developed using Node.js, Express, Passport and Mongoose.
 
 ### Version
-1.1.0
+2.0
 
 ### Usage
-
+Demo: https://thawing-mesa-53941.herokuapp.com/
 
 ### Installation
 
