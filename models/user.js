@@ -58,3 +58,12 @@ module.exports.addBeer = function(beer,user,callback){
 	// console.log(user.beers);
 	user.save();
 }
+
+module.exports.ShowHisBeers = function(user,callback){
+	var beers = user.beers;
+	beers.forEach(function(elem){
+
+		// console.log(elem.name)
+
+	});
+}

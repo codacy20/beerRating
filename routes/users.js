@@ -71,7 +71,7 @@ router.post('/addBeer',
 		// passport.authenticate('local', { session: false },
   	// 		function(req, res) {
 		var u = req.user;
-		console.log(u);
+		// console.log(u);
 					User.addBeer(newBeer,u , function(err, newBeer){
 						if(err) throw err;
 					});
