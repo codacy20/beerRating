@@ -1,4 +1,4 @@
-# Node.js Loginapp
+# Node.js Beer Rating App 🍺🍺🍺
 
 This is a Beer Rating App with features like: user login, registration and rating. It was developed using Node.js, Express, Passport and Mongoose.
 
