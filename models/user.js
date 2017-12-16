@@ -59,11 +59,16 @@ module.exports.addBeer = function(beer,user,callback){
 	user.save();
 }
 
-module.exports.ShowHisBeers = function(user,callback){
-	var beers = user.beers;
-	beers.forEach(function(elem){
+module.exports.ShowHisBeers = function(beers,callback){
 
-		// console.log(elem.name)
+	beers.sort(compare);
+	return beers;
+}
 
-	});
+function compare(a,b) {
+  if (a.rate < b.rate)
+    return 1;
+  if (a.rate > b.rate)
+    return -1;
+  return 0;
 }

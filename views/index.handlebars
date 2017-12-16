@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1 class="display-3"></h1>
+  <h1 class="display-3">{{id}}</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -9,8 +9,8 @@
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="beer name" name="name">
 
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary active">
-<input type="radio" name="rate" id="option1" autocomplete="off" value="1" checked> 1
+      <label class="btn btn-primary">
+<input type="radio" name="rate" id="option1" autocomplete="off" value="1"> 1
 </label>
       <label class="btn btn-primary">
 <input type="radio" name="rate" id="option2" autocomplete="off" value="2"> 2
@@ -21,8 +21,8 @@
       <label class="btn btn-primary">
 <input type="radio" name="rate" id="option4" autocomplete="off" value="4"> 4
 </label>
-      <label class="btn btn-primary">
-<input type="radio" name="rate" id="option5" autocomplete="off" value="5"> 5
+      <label class="btn btn-primary active">
+<input type="radio" name="rate" id="option5" autocomplete="off" value="5" checked> 5
 </label>
     </div>
 
@@ -76,18 +76,12 @@
         <th>Name</th>
         <th>Rate</th>
       </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-      </tr>
-      <tr>
-        <td>Ernst Handel</td>
-        <td>Roland Mendel</td>
-      </tr>
+      {{#each beers}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{rate}}</td>
+        </tr>
+      {{/each}}
     </table>
   </div>
 </div>
