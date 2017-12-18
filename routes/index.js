@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var Beer = require('../models/beer');
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
 
-	var b = User.ShowHisBeers(req.user.beers);
-	res.render('index',{beers:b});
+	var a = User.ShowHisBeers(req.user.beers);
+	Beer.ShowAllBeers(function(callback) {
+			res.render('index',{beers:a,beers2:callback});
+	});
+
 });
 
 function ensureAuthenticated(req, res, next){

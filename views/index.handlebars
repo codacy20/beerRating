@@ -41,23 +41,17 @@
     </div>
 
     <!-- Table -->
-    <table class="table" id="myTable">
+    <table class="table">
       <tr>
         <th>Name</th>
         <th>Rate</th>
       </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-      </tr>
-      <tr>
-        <td>Ernst Handel</td>
-        <td>Roland Mendel</td>
-      </tr>
+      {{#each beers2}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{rate}}</td>
+        </tr>
+      {{/each}}
     </table>
   </div>
 </div>

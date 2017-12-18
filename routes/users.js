@@ -66,14 +66,19 @@ router.post('/addBeer',
       rate: rate
     });
     var u = req.user;
-    User.addBeer(newBeer, u, function(err, newBeer) {
-      if (err) throw err;
-    });
-    Beer.createBeer(newBeer, function(err, newBeer) {
+    var isAdded = User.addBeer(newBeer, u, function(err, newBeer) {
       if (err) throw err;
     });
 
-    req.flash('success_msg', 'You\'ve just rated a beer! Cheers');
+    if(!isAdded)
+    {
+      Beer.createBeer(newBeer, function(err, newBeer) {
+        if (err) throw err;
+      });
+      req.flash('success_msg', 'You\'ve just rated a beer! Cheers');
+    }
+
+    req.flash('error_msg', 'You\'ve already rated that beer');
 
     res.redirect('/');
 

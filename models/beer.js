@@ -20,7 +20,7 @@ module.exports.createBeer = function(newBeer, callback){
 	query.exec(function(err,result){
 		if(err) return handleError(err);
 		if(result){
-			
+			//to:do
 			console.log('this is the result: '+result.rate);
 			result.rate += newBeer.rate;
 			result.save(callback);
@@ -35,6 +35,18 @@ module.exports.createBeer = function(newBeer, callback){
 module.exports.getBeer = function(name, callback){
 	var query = {name: name};
 	Beer.findOne(query, callback);
+}
+
+module.exports.ShowAllBeers = function(callback){
+	Beer.find().sort({'rate': -1}).limit(4).exec(function(err, beers) {
+		if(err == null)
+		{
+			callback(beers);
+		}
+		else {
+			callback(err);
+		}
+	});
 }
 
 module.exports.getBeerById = function(id, callback){
