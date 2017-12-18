@@ -54,7 +54,17 @@ module.exports.getBeers = function(id,callback){
 }
 
 module.exports.addBeer = function(beer,user,callback){
-	user.beers.push(beer);
+
+	var check = false;
+for(var i=0;i<user.beers.length;i++){
+
+	if(beer.name === user.beers[i].name){
+
+		check = true;
+		break;
+	}
+}
+	if(!check) user.beers.push(beer);
 	// console.log(user.beers);
 	user.save();
 }

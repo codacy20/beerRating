@@ -16,12 +16,25 @@ var Beer = module.exports = mongoose.model('Beer', BeerSchema);
 
 module.exports.createBeer = function(newBeer, callback){
 
-	newBeer.save(callback);
+	var query = Beer.findOne({'name':newBeer.name});
+	query.exec(function(err,result){
+		if(err) return handleError(err);
+		if(result){
+			
+			console.log('this is the result: '+result.rate);
+			result.rate += newBeer.rate;
+			result.save(callback);
+		}
+		if(!result){
+
+			newBeer.save(callback);
+		}
+	});
 }
 
 module.exports.getBeer = function(name, callback){
-var query = {name: name};
-Beer.findOne(query, callback);
+	var query = {name: name};
+	Beer.findOne(query, callback);
 }
 
 module.exports.getBeerById = function(id, callback){
