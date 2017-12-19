@@ -6,6 +6,7 @@ This is a Beer Rating App with features like: user login, registration and ratin
 2.0
 
 ### Usage
+You can try this app without running the Docker file. You can use the link below instead.   
 Demo: https://thawing-mesa-53941.herokuapp.com/
 
 ### Installation
