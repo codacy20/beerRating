@@ -21,7 +21,7 @@ $ npm install
 $ npm start
 ```
 
-### Installation
+### Running the Docker file
 ```docker build . --tag amirkiumarsi/beerapp:version1
 ```docker run --name=beer -d -i -t -p 3000:3000 amirkiumarsi/beerapp:version1
 ```docker pull amirkiumarsi/beerapp
