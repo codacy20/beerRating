@@ -1,0 +1,55 @@
+# To imidiately build and run use below command:
+# docker-compose build
+# docker-compose up 
+# Or combined version docker-compose up --build
+
+# Again in same folder as Dockerfile and your application 
+
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - /data/mongodb/db:/data/db
+    ports:
+      - "27017:27017"
+      
+      
+# OR
+# docker swarm init
+# docker stack deploy -c docker-compose.yml getstartedlab
+
+
+# for Swarm mode, you can do so many thing here even defining worker and manager if you need let me know to help you get there faster below is a sample without worker or manager  
+
+#version: "3"
+#services:
+#  web:
+#    # replace username/repo:tag with your name and image details
+#    image: username/repo:tag
+#    deploy:
+#      replicas: 5 # Number of pararell container
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#      restart_policy:
+#        condition: on-failure
+#    ports:
+#      - "80:80"
+#    networks:
+#      - webnet
+#networks:
+#  webnet:
+#  mongo:
+#    image: mongo
+#    volumes:
+#      - /data/mongodb/db:/data/db
+#    ports:
+#      - "27017:27017"
